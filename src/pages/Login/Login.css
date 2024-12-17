@@ -1,0 +1,140 @@
+.login {
+  height: 100vh;
+  background-image: linear-gradient(#0000007e, #0000007e),
+    url(/background_banner2.jpg);
+  padding: 20px 8%;
+}
+
+.login-logo {
+  width: 150px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 60px;
+  margin: 0 auto;
+}
+
+.login-form h1 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.login-form input {
+  width: 100%;
+  height: 50px;
+  background: #333;
+  color: white;
+  margin: 12px 0;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-form input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-form button {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 16px;
+  background: #e50914;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.form-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b3b3b3;
+  font-size: 13px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remember input {
+  width: 18px;
+  height: 18px;
+}
+
+.form-switch {
+  margin-top: 10px;
+  color: #737373;
+  /* display: none;/ */
+}
+
+.form-switch span {
+  margin-left: 3px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login-spinner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-spinner {
+  width: 100%;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #f03355) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
+}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 500px) {
+  .login {
+    padding: 15px 5%;
+  }
+  .login-form {
+    padding: 20px;
+    margin-top: 30px;
+  }
+}
