@@ -15,7 +15,6 @@ const App = () => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         navigate("/");
-        console.log("logged in");
       } else {
         navigate("/login");
         console.log("logged out");

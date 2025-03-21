@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import cards_data from "../../assets/cards/Cards_data";
+import { useEffect, useRef, useState } from "react";
 import "./TitleCards.css";
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ const TitleCards = ({ title, category, genre, type }) => {
     headers: {
       accept: "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZDZhMWQ1NjJlOTViYTQ2MTEyYThiYzA5ZDk3MjY3YyIsIm5iZiI6MTczNDIzNDYxMi4wNjIsInN1YiI6IjY3NWU1MWY0MmNiOTZlNTg4MGM5MTE2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.852WexuF8ERF8hu3Pw7xXDWhLRRLkgDQrJIET7Yq3PI",
+        "Bearer "+ import.meta.env.VITE_TMDB_API_KEY,
     },
   };
 
@@ -56,7 +55,6 @@ const TitleCards = ({ title, category, genre, type }) => {
     <div className="title-cards">
       <h2>{title}</h2>
       <div className="card-list " ref={cardsRef}>
-        {console.log("Popular", apiData)}
         {apiData.map((card, index) => {
           return (
             <Link to={`/player/${card.id}`} className="card" key={index}>
